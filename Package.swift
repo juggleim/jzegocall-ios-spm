@@ -9,14 +9,15 @@ let package = Package(
         .library(name: "JZegoCall", targets: ["JZegoCall", "JZegoCallSupport"])
     ],
     dependencies: [
-        .package(url: "https://github.com/Juggleim/juggleim-ios-spm.git", exact: "1.10.0"),
+        // Any JuggleIM from the minimum this plugin was built against up to the next major.
+        .package(url: "https://github.com/Juggleim/juggleim-ios-spm.git", "1.10.1"..<"2.0.0"),
         .package(url: "https://github.com/zegolibrary/express-video-ios.git", exact: "3.22.0")
     ],
     targets: [
         .binaryTarget(
             name: "JZegoCall",
-            url: "https://downloads.juggle.im/libs/ios/JZegoCall/JZegoCall_v1_10_0.zip",
-            checksum: "ea4c38aa12a90b82c53bc13f6ffaa5ccaea684f931cb3388ebd15edd2071115e"
+            url: "https://downloads.juggle.im/libs/ios/JZegoCall/JZegoCall_v1_10_1.zip",
+            checksum: "43f2d417fef41573b981cc2d4dac6b36c63e42a551847a51896b7d869136c977"
         ),
         // Binary targets cannot declare dependencies, so this target carries them,
         // and keeps the engine class linked (see Sources/JZegoCallSupport).
